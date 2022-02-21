@@ -65,7 +65,7 @@ Route::get('/', [HomeCompanyController::class, 'index']);
 // Nomor 2:
 Route::prefix('category')->group(function () {
     Route::get('/marbel-edu-games', [CategoryController::class, 'edugames']);
-    Route::get('/marbel-and-friends-kids-games', [CategoryController::class, 'kidsgames']);
+    Route::get('/marbel-and-friends-kids-games', [CategoryController::class, 'kidsgame']);
     Route::get('/riri-story-books', [CategoryController::class, 'storybooks']);
     Route::get('/kolak-kids-songs', [CategoryController::class, 'kidsongs']);
 });
