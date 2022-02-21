@@ -13,6 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/***  PRAKTIKUM 1 ***/
+
+// Nomor 1:
 Route::get('/', function () {
-    return view('welcome');
+    echo "Selamat Datang";
 });
+
+// Nomor 2:
+Route::get('/about', function () {
+    echo "NIM: 2041720132 <br>";
+    echo "Nama: Maulana Bintang Irfansyah <br>";
+    echo "Kelas: TI-2H";
+});
+
+// Nomor3
+Route::get('/articles/{id}', function ($id) {
+    echo "Ini adalah halaman artikel dengan ID $id";
+});
+
