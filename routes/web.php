@@ -88,3 +88,11 @@ Route::get('/about-us', [AboutUsController::class, 'index'])->name('aboutus.inde
 // Tambahan
 Route::resource('contact', ContactController::class);
 Route::resource('photos', PhotoController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
