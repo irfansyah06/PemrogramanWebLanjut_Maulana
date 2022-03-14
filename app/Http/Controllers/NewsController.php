@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
+use App\Models\News;
 
 class NewsController extends Controller
 {
@@ -13,12 +14,26 @@ class NewsController extends Controller
     //     return '<a href="https://www.educastudio.com/news/' . $news . '" target="_blank">https://www.educastudio.com/news/' . $news . '</a>';
     // }
 
-    public function show($slug = "")
+    public function index()
+    {
+        $data = News::getAll();
+        return view('pages.news.index', compact('data'));
+    }
+
+    // public function show($slug = "")
+    // {
+    //     if ($slug) {
+    //         $title = str_replace("-", " ", $slug);
+    //         return view('pages.detail', compact('title'));
+    //     }
+    //     return view('pages.news.news');
+    // }
+    public function show(string $slug = "")
     {
         if ($slug) {
-            $title = str_replace("-", " ", $slug);
-            return view('pages.detail', compact('title'));
+            $data = News::getBySlug($slug);
+            return view('pages.news.show', compact('data'));
         }
-        return view('pages.news.news');
+        return $this->index();
     }
 }

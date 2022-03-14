@@ -101,9 +101,6 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-
-/***  PRAKTIKUM 3_View - 07 March 2022 ***/
 Auth::routes();
 
 Route::get('/', [WelcomeController::class, 'index'])->name('indexPage');
@@ -111,19 +108,21 @@ Route::get('home', [HomeController::class, 'index'])->name('home');
 
 Route::prefix('category')->group(function () {
     Route::get('/', [ProductController::class, 'index'])->name('category');
-    Route::get('marbel-edu-games', [ProductController::class, 'eduGames'])->name('eduGames');
-    Route::get('marbel-and-friends-kids-games', [ProductController::class, 'kidsGames'])->name('kidsGames');
-    Route::get('riri-story-books', [ProductController::class, 'storyBooks'])->name('storyBooks');
-    Route::get('kolak-kids-songs', [ProductController::class, 'kidsSongs'])->name('kidsSongs');
+    Route::get('{slug}', [ProductController::class, 'show'])->name('categories.show');
+    // Route::get('marbel-edu-games', [ProductController::class, 'eduGames'])->name('eduGames');
+    // Route::get('marbel-and-friends-kids-games', [ProductController::class, 'kidsGames'])->name('kidsGames');
+    // Route::get('riri-story-books', [ProductController::class, 'storyBooks'])->name('storyBooks');
+    // Route::get('kolak-kids-songs', [ProductController::class, 'kidsSongs'])->name('kidsSongs');
 });
 
 Route::get('news/{slug?}', [NewsController::class, 'show'])->name('news');
 
 Route::prefix('program')->group(function () {
     Route::get('/', [ProgramController::class, 'index'])->name('program');
-    Route::get('karir', [ProgramController::class, 'karir'])->name('karir');
-    Route::get('magang', [ProgramController::class, 'magang'])->name('magang');
-    Route::get('kunjungan-industri', [ProgramController::class, 'kunjungan'])->name('kunjungan');
+    Route::get('{slug}', [ProgramController::class, 'show'])->name('programs.show');
+    // Route::get('karir', [ProgramController::class, 'karir'])->name('karir');
+    // Route::get('magang', [ProgramController::class, 'magang'])->name('magang');
+    // Route::get('kunjungan-industri', [ProgramController::class, 'kunjungan'])->name('kunjungan');
 });
 
 Route::get('about-us', [AboutController::class, 'about'])->name('about-us');
