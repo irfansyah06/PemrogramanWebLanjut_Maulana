@@ -14,12 +14,12 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> 
                 <div class="col-lg-9">
                     <div class="right_header_info">
                         <ul>
                             <li>
-                                <a href="#"><img style="margin-right: 15px;" src="{{ asset('assets/icon/1.png') }}" alt="#" /></a>
+                                <a href="{{ route('login') }}"><img style="margin-right: 15px;" src="{{ asset('assets/icon/1.png') }}" alt="#" title="Login"/></a>
                             </li>
                             <li class="tytyu">
                                 <a href="#"><img style="margin-right: 15px;" src="{{ asset('assets/icon/2.png') }}" alt="#" /></a>
@@ -35,6 +35,7 @@
                             </li>
                         </ul>
                     </div>
+                    
                 </div>
             </div>
         </div>
