@@ -134,3 +134,5 @@ Route::resource('contact-us', ContactController::class)->only('index', 'store');
 
 // Jobsheet 10 - Pertemuan 10
 Route::resource('/articles', ArticleController::class);
+
+Route::get('/article/cetak_pdf', [ArticleController::class, 'cetak_pdf'])->name('cetak_pdf');
