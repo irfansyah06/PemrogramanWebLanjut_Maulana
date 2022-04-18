@@ -17,6 +17,9 @@ use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ArticleController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -128,3 +131,6 @@ Route::prefix('program')->group(function () {
 Route::get('about-us', [AboutController::class, 'about'])->name('about-us');
 
 Route::resource('contact-us', ContactController::class)->only('index', 'store');
+
+// Jobsheet 10 - Pertemuan 10
+Route::resource('/articles', ArticleController::class);
